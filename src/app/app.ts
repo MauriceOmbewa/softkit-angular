@@ -11,6 +11,16 @@ export class Header{
   protected readonly title = signal('day3');
 }
 
+//card section
+@Component({
+  selector: 'card',
+  templateUrl: 'app.card.html',
+  styleUrl: './app.card.css'
+})
+export class Card{
+  protected readonly title = signal('day3');
+}
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
