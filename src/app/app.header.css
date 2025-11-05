@@ -1,6 +1,14 @@
 .navbar{
     display: flex;
-    color: white;
-    background-color: black;
+    background-color: #1E3A8A;
     align-items: center;
+    justify-content: center;
+    height: 50%;
+}
+.navbar a {
+    color: #FFFFFF;
+    padding-inline: 50px;
+}
+.navbar a:hover{
+    color: #3B82F6;
 }
