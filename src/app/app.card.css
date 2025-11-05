@@ -1,14 +1,20 @@
 .card{
-    display: inline;
-    align-content: center;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+.image{
+    width: 40%;
+    flex-shrink: 0;
+}
+.image img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 .picdescription{
     color: coral;
-    text-shadow: black;
-    width: 30%;
-    border: 50px;
-}
-.image{
-    width: 30%;
-    border: 50px;
+    width: 60%;
+    padding: 10px;
 }
