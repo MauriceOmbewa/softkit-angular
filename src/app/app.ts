@@ -43,7 +43,7 @@ export class Footer{
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Card],
+  imports: [RouterOutlet, Header, Card, Body, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
