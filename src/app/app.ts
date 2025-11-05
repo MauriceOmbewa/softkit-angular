@@ -31,6 +31,16 @@ export class Body{
   protected readonly title = signal('day3');
 }
 
+//footer section
+@Component({
+  selector: 'footer',
+  templateUrl: './app.footer.html',
+  styleUrl: './app.footer.css'
+})
+export class Footer{
+  protected readonly title = signal('day3')
+}
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
