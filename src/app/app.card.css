@@ -1,0 +1,13 @@
+.card{
+    display: inline;
+}
+.picdescription{
+    color: coral;
+    text-shadow: black;
+    width: 30%;
+    border: 50px;
+}
+.image{
+    width: 30%;
+    border: 50px;
+}
