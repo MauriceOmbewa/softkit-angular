@@ -1,5 +1,6 @@
 .card{
     display: inline;
+    align-content: center;
 }
 .picdescription{
     color: coral;
