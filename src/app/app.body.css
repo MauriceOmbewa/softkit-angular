@@ -13,6 +13,23 @@
     margin: 0 auto 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
+.testimonials div {
+    background-color: #FFFFFF;      /* white cards for each testimonial */
+    border-left: 5px solid #3B82F6; /* accent stripe */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.testimonials div:hover {
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+} 
+.testimonials div p {
+    margin: 0;
+ }
 .motto{
     background-color: #1E3A8A;
     color: #F9FAFB;
