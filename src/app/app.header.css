@@ -8,6 +8,7 @@
 .navbar a {
     color: #FFFFFF;
     padding-inline: 50px;
+    text-decoration: none;
 }
 .navbar a:hover{
     color: #3B82F6;
