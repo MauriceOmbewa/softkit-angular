@@ -1,11 +1,27 @@
 .body{
     color: black;
+    background-color: #F8FAFC;
+    padding: 40px 20px;
+    font-family: "Open Sans", sans-serif;
 }
 .testimonials{
     color: black;
-    background-color: brown;
+    background-color: #E0F2FE;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 .motto{
-    background-color: burlywood;
-    color: black;
+    background-color: #1E3A8A;
+    color: #F9FAFB;
+    padding: 40px 0;
+    border-radius: 8px;
+    font-size: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(o, o, o, o.1);
+}
+.motto p{
+    margin: 0;
 }
