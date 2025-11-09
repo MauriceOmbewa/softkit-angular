@@ -11,6 +11,8 @@
         </div>
     </div>
     <div class="motto">
+        <p *ngIf="IsLoggedIn"> Welcome back</p>
+        <p *ngIf="!IsLoggedIn"> Please log in</p>
         <p>We deliver</p>
     </div>
 </div>
