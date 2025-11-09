@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 //header section
 @Component({
@@ -24,11 +25,13 @@ export class Card{
 //body section
 @Component({
   selector: 'body',
+  imports: [CommonModule],
   templateUrl: './app.body.html',
   styleUrl: './app.body.css'
 })
 export class Body{
   protected readonly title = signal('day3');
+  protected IsLoggedIn = true;
 }
 
 //footer section
