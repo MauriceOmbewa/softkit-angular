@@ -31,6 +31,30 @@
             <span>- Emmanuel Maweu, Owner of Bella Boutique</span>
         </div>
     </div>
+    <div class="api-demo-section">
+        <h2>Latest Blog Posts (From API)</h2>
+        
+        <div *ngIf="loading" class="loading">
+            Loading posts...
+        </div>
+        
+        <div *ngIf="error" class="error">
+            {{ error }}
+        </div>
+        
+        <div *ngIf="posts.length > 0" class="posts-grid">
+            <div *ngFor="let post of posts" class="post-card">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.body }}</p>
+                <small>Post ID: {{ post.id }}</small>
+            </div>
+        </div>
+        
+        <button (click)="loadPosts()" class="reload-btn">
+            Reload Posts
+        </button>
+    </div>
+    
     <div class="cta-section">
         <h2>Ready to Grow Your Business?</h2>
         <p>Let's discuss how we can help you achieve your digital marketing goals</p>
