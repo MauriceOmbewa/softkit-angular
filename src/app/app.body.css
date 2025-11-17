@@ -1,48 +1,260 @@
 .body{
-    color: black;
     background-color: #F8FAFC;
-    padding: 40px 20px;
+    padding: 60px 20px;
     font-family: "Open Sans", sans-serif;
 }
-.testimonials{
-    color: black;
-    background-color: #E0F2FE;
+
+.services-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    color: #1F2937;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
     border-radius: 12px;
-    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #1E3A8A;
+    margin-bottom: 1rem;
+}
+
+.testimonials{
     max-width: 1000px;
-    margin: 0 auto 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin: 0 auto 80px;
+    text-align: center;
 }
-.testimonials div {
-    background-color: #FFFFFF;      /* white cards for each testimonial */
-    border-left: 5px solid #3B82F6; /* accent stripe */
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #1F2937;
+    margin-bottom: 3rem;
+}
+
+.testimonial-card {
+    background-color: #FFFFFF;
+    border-left: 5px solid #3B82F6;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
     line-height: 1.6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    font-style: italic;
 }
-.testimonials div:hover {
-    transform: translateY(-3px);
-    transition: 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-} 
-.testimonials div p {
-    margin: 0;
- }
-.motto{
-    background-color: #1E3A8A;
-    color: #F9FAFB;
-    padding: 40px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+.testimonial-card span {
+    font-weight: bold;
+    color: #1E3A8A;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 12px;
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
 }
-.motto p{
-    margin: 0;
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
     font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.contact-btn {
+    background-color: #FF6B6B;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #FF5252;
+    transform: translateY(-2px);
+}
+
+/* API Demo Section Styles */
+.api-demo-section {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.api-demo-section h2 {
+    font-size: 2.5rem;
+    color: #1F2937;
+    margin-bottom: 3rem;
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: #3B82F6;
+    padding: 2rem;
+}
+
+.error {
+    background-color: #FEE2E2;
+    color: #DC2626;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.posts-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.post-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    border-left: 4px solid #10B981;
+}
+
+.post-card h3 {
+    color: #1F2937;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.post-card p {
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.post-card small {
+    color: #9CA3AF;
+    font-weight: bold;
+}
+
+.reload-btn {
+    background-color: #10B981;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.reload-btn:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+}
+
+/* Add Post Form Styles */
+.add-post-section {
+    max-width: 600px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.add-post-section h2 {
+    font-size: 2.5rem;
+    color: #1F2937;
+    margin-bottom: 2rem;
+}
+
+.post-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #1F2937;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3B82F6;
+}
+
+.submit-btn {
+    background-color: #3B82F6;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #2563EB;
+}
+
+.submit-btn:disabled {
+    background-color: #9CA3AF;
+    cursor: not-allowed;
 }

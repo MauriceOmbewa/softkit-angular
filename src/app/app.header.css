@@ -2,14 +2,26 @@
     display: flex;
     background-color: #1E3A8A;
     align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.logo {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav {
+    display: flex;
+    gap: 2rem;
 }
 .navbar a {
     color: #FFFFFF;
-    padding-inline: 50px;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 .navbar a:hover{
-    color: #3B82F6;
+    background-color: #3B82F6;
+    color: #FFFFFF;
 }

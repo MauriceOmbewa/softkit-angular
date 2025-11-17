@@ -1,18 +1,151 @@
-<div class="body">
-    <div class="testimonials">
-        <div class="one">
-            <p>In the quiet town of Marrowfield, time moved slowly — almost too slowly. The cobblestone streets echoed the same footsteps every morning, and the bell tower rang with such precision that people rarely checked their own watches. At the corner of Elm Street stood a tiny shop, known simply as Hollis & Timepieces. Inside worked an old clockmaker named Edwin Hollis, who was said to have built a clock that never needed winding.</p>
+<div class="body-container">
+    <section class="services-section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3>Digital Strategy</h3>
+                <p>Comprehensive digital marketing strategies tailored to your business goals and target audience.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Web Design</h3>
+                <p>Beautiful, responsive websites that convert visitors into customers and reflect your brand.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Social Media</h3>
+                <p>Engaging social media campaigns that build community and drive meaningful interactions.</p>
+            </div>
         </div>
-        <div class="two">
-            <p>Edwin was a quiet man with steady hands and eyes that always seemed to be measuring something invisible. He had learned his craft from his father, who had once told him that every clock had a soul — and that a true clockmaker’s job was not to build time, but to understand it. So each morning, as the sun rose through the dusty glass windows, Edwin would carefully polish gears, align springs, and whisper small apologies to the clocks that refused to tick.</p>
+    </section>
+
+
+    <section class="testimonials-section">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="location-badge" [ngStyle]="{'color': textColor}">
+            🇰🇪 Kenya - Land of Endless Prosperity
         </div>
-        <div class="three">
-            <p>One stormy evening, just as he was about to close the shop, a young woman rushed in, soaked to the bone. She carried an old, broken pocket watch and a look of quiet desperation. “It belonged to my grandfather,” she said softly. “It stopped the moment he passed.” Edwin took the watch gently, feeling its weight. The glass was cracked, the hands were frozen, and the engraving on the back had almost faded away. “I can fix it,” he said after a pause, “but it might take more than time.”</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p>"DigitalBoost transformed our online presence completely. Our website traffic increased by 300% and sales doubled within 6 months!"</p>
+                <div class="testimonial-author">
+                    <strong>Sarah Njeri</strong>
+                    <span>CEO of TechStart</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p>"Professional, creative, and results-driven. They understood our vision and delivered beyond expectations."</p>
+                <div class="testimonial-author">
+                    <strong>Michael Kemei</strong>
+                    <span>Founder of GreenLife</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p>"The best investment we made for our business. Their social media strategy brought us hundreds of new customers."</p>
+                <div class="testimonial-author">
+                    <strong>Emmanuel Maweu</strong>
+                    <span>Owner of Bella Boutique</span>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="motto">
-        <!-- <p *ngIf="IsLoggedIn"> Welcome back</p>
-        <p *ngIf="!IsLoggedIn"> Please log in</p> -->
-        <p>We deliver</p>
-    </div>
+    </section>
+
+
+    <section class="add-post-section">
+        <div class="post-form-card">
+            <div class="card-header">
+                <div class="form-icon">➕</div>
+                <div>
+                    <h3>Add New Post</h3>
+                    <p>Share your thoughts with the community</p>
+                </div>
+            </div>
+            <form (ngSubmit)="addPost()" class="post-form">
+                <div class="form-group">
+                    <label for="title">Post Title</label>
+                    <input 
+                        type="text"
+                        id="title"
+                        [(ngModel)]="newPost.title" 
+                        name="title" 
+                        placeholder="Enter an engaging title"
+                        required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="body">Post Content</label>
+                    <textarea 
+                        id="body"
+                        [(ngModel)]="newPost.body" 
+                        name="body" 
+                        placeholder="Share your story..."
+                        rows="4"
+                        required></textarea>
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="isSubmitting">
+                    {{ isSubmitting ? '⏳ Publishing...' : '📤 Publish Post' }}
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <section class="posts-section">
+        <div class="section-header">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <button class="btn btn-round" (click)="loadPosts()">🔄</button>
+        </div>
+        
+        <div *ngIf="loading" class="loading-container">
+            <div class="spinner"></div>
+            <p>Loading amazing content...</p>
+        </div>
+        
+        <div *ngIf="error" class="error-card">
+            ⚠️ {{ error }}
+        </div>
+        
+        <div *ngIf="posts.length > 0" class="posts-grid">
+            <div *ngFor="let post of posts" class="post-card">
+                <div class="post-header">
+                    <div class="post-icon">📝</div>
+                    <div>
+                        <h3>{{ post.title }}</h3>
+                        <span class="post-id">Post #{{ post.id }}</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>{{ post.body }}</p>
+                </div>
+                <div class="post-actions">
+                    <button class="btn btn-sm">👍 Like</button>
+                    <button class="btn btn-sm">📤 Share</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cta-section">
+        <div class="cta-card">
+            <div class="cta-icon">🚀</div>
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Let's discuss how we can help you achieve your digital marketing goals</p>
+            <button class="btn btn-primary btn-large">📧 Contact Us Today</button>
+        </div>
+    </section>
 </div>
