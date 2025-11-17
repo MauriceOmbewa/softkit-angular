@@ -1,6 +1,225 @@
-<main class="main">
-    <header></header>
-    <card></card>
-    <app-body></app-body>
-    <footer></footer>
-</main>
+<!-- Header -->
+<header class="modern-header">
+  <div class="header-content">
+    <div class="logo">🚀 DigitalBoost</div>
+    <nav class="nav-menu">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Portfolio</a>
+      <a href="#" class="nav-link contact-btn">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Boost Your Digital Presence</h1>
+        <p class="hero-description">We help businesses grow online through strategic digital marketing, stunning web design, and data-driven campaigns that deliver real results.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary">📈 Get Started Today</button>
+          <button class="btn btn-secondary">▶️ Watch Demo</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/backpic.jpeg" alt="Digital Marketing Team">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="body-container">
+  <!-- Services -->
+  <section class="services-section">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3>Digital Strategy</h3>
+        <p>Comprehensive digital marketing strategies tailored to your business goals and target audience.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Web Design</h3>
+        <p>Beautiful, responsive websites that convert visitors into customers and reflect your brand.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media</h3>
+        <p>Engaging social media campaigns that build community and drive meaningful interactions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="location-badge" [ngStyle]="{'color': textColor}">
+      🇰🇪 Kenya - Land of Endless Prosperity
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p>"DigitalBoost transformed our online presence completely. Our website traffic increased by 300% and sales doubled within 6 months!"</p>
+        <div class="testimonial-author">
+          <strong>Sarah Njeri</strong>
+          <span>CEO of TechStart</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p>"Professional, creative, and results-driven. They understood our vision and delivered beyond expectations."</p>
+        <div class="testimonial-author">
+          <strong>Michael Kemei</strong>
+          <span>Founder of GreenLife</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p>"The best investment we made for our business. Their social media strategy brought us hundreds of new customers."</p>
+        <div class="testimonial-author">
+          <strong>Emmanuel Maweu</strong>
+          <span>Owner of Bella Boutique</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Post Form -->
+  <section class="add-post-section">
+    <div class="post-form-card">
+      <div class="card-header">
+        <div class="form-icon">➕</div>
+        <div>
+          <h3>Add New Post</h3>
+          <p>Share your thoughts with the community</p>
+        </div>
+      </div>
+      <form (ngSubmit)="addPost()" class="post-form">
+        <div class="form-group">
+          <label for="title">Post Title</label>
+          <input 
+            type="text"
+            id="title"
+            [(ngModel)]="newPost.title" 
+            name="title" 
+            placeholder="Enter an engaging title"
+            required>
+        </div>
+        <div class="form-group">
+          <label for="body">Post Content</label>
+          <textarea 
+            id="body"
+            [(ngModel)]="newPost.body" 
+            name="body" 
+            placeholder="Share your story..."
+            rows="4"
+            required></textarea>
+        </div>
+        <button 
+          type="submit" 
+          class="btn btn-primary"
+          [disabled]="isSubmitting">
+          {{ isSubmitting ? '⏳ Publishing...' : '📤 Publish Post' }}
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="posts-section">
+    <div class="section-header">
+      <h2 class="section-title">Latest Blog Posts</h2>
+      <button class="btn btn-round" (click)="loadPosts()">🔄</button>
+    </div>
+    
+    <div *ngIf="loading" class="loading-container">
+      <div class="spinner"></div>
+      <p>Loading amazing content...</p>
+    </div>
+    
+    <div *ngIf="error" class="error-card">
+      ⚠️ {{ error }}
+    </div>
+    
+    <div *ngIf="posts.length > 0" class="posts-grid">
+      <div *ngFor="let post of posts" class="post-card">
+        <div class="post-header">
+          <div class="post-icon">📝</div>
+          <div>
+            <h3>{{ post.title }}</h3>
+            <span class="post-id">Post #{{ post.id }}</span>
+          </div>
+        </div>
+        <div class="post-content">
+          <p>{{ post.body }}</p>
+        </div>
+        <div class="post-actions">
+          <button class="btn btn-sm">👍 Like</button>
+          <button class="btn btn-sm">📤 Share</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-card">
+      <div class="cta-icon">🚀</div>
+      <h2>Ready to Grow Your Business?</h2>
+      <p>Let's discuss how we can help you achieve your digital marketing goals</p>
+      <button class="btn btn-primary btn-large">📧 Contact Us Today</button>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <div class="footer-brand">
+        <span class="brand-icon">🚀</span>
+        <h3>DigitalBoost</h3>
+      </div>
+      <p>Transforming businesses through innovative digital marketing solutions.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Services</h4>
+      <div class="service-links">
+        <a href="#">🧠 Digital Strategy</a>
+        <a href="#">🌐 Web Design</a>
+        <a href="#">📱 Social Media</a>
+        <a href="#">🔍 SEO Optimization</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span>📧</span>
+          <span>hello@digitalboost.com</span>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <span>+254 123 456 78</span>
+        </div>
+        <div class="contact-item">
+          <span>📍</span>
+          <span>Nairobi, Kenya</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 DigitalBoost. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">🔗 Facebook</a>
+      <a href="#">🔗 Twitter</a>
+      <a href="#">🔗 LinkedIn</a>
+    </div>
+  </div>
+</footer>
